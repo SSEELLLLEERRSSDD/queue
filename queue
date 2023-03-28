@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication49
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<string> SPISOK_NA_OTCHISLENIE = new Queue<string>();
+            SPISOK_NA_OTCHISLENIE.Enqueue("Nikolaev");
+            SPISOK_NA_OTCHISLENIE.Enqueue("Sashnikov");
+            foreach (string i in SPISOK_NA_OTCHISLENIE)
+                Console.WriteLine(i);
+            Console.WriteLine(SPISOK_NA_OTCHISLENIE.Contains("Sashnikov"));
+            Console.WriteLine(SPISOK_NA_OTCHISLENIE.Contains("Nikolaev"));
+            string first = SPISOK_NA_OTCHISLENIE.Peek();
+            Console.WriteLine(first);
+            List<string> Otchisleni = new List<string>();
+            Console.WriteLine("отчислены");
+            Otchisleni.Add(SPISOK_NA_OTCHISLENIE.Dequeue());
+            Otchisleni.Add(SPISOK_NA_OTCHISLENIE.Dequeue());
+            foreach (string i in Otchisleni)
+                Console.WriteLine(i);
+            SPISOK_NA_OTCHISLENIE.Clear();
+            Console.ReadKey();
+
+        }
+    }
+}
